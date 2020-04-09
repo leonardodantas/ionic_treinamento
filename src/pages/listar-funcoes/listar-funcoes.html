@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Funções</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let funcao of funcoes" round  >
+  
+      <ion-list>
+        <ion-item>
+          <ion-icon small name="briefcase" item-start></ion-icon>
+            <h3>{{ funcao.nomeFuncao }}</h3>
+        </ion-item>
+        
+        <ion-item>
+          <ion-icon small name="cash" item-start></ion-icon>
+            <h3>{{ funcao.salarioBase | currency}}</h3>
+        </ion-item>
+
+      </ion-list>
+    
+  </ion-card>
+</ion-content>

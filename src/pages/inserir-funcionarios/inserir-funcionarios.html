@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title >Novo Funcionario</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<!--dataNascimento, nome, idFuncao, cpf -->
+  <form [formGroup]="funcionarioInserir" (ngSubmit)="novoFuncionario()">
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input formControlName="nome" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input  formControlName="email" ></ion-input>   
+    </ion-item>
+    <ion-item>
+      <ion-label floating>CPF</ion-label>
+      <ion-input formControlName="cpf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Data Nascimento</ion-label>
+      <ion-datetime  formControlName="dataNascimento" displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Função</ion-label>
+      <ion-select formControlName="idFuncao" >
+        <ion-option *ngFor="let f of funcoes" [value]="f.id">{{ f.nomeFuncao }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button [disabled]="funcionarioInserir.invalid" color="dark" round block>Cadastrar</button>
+  </form>
+
+</ion-content>

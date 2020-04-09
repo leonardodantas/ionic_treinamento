@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ListarFuncionariosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Funcionarios</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let funcionario of funcionarios" round  >
+    <ion-card-header>
+      {{funcionario.nome }}
+    </ion-card-header>
+  
+      <ion-list>
+        <ion-item>
+          <ion-icon small name="mail" item-start></ion-icon>
+            <h3>{{ funcionario.email }}</h3>
+        </ion-item>
+        
+        <ion-item>
+          <ion-icon small name="calendar" item-start></ion-icon>
+            <h3>{{ funcionario.dataNascimento | date }}</h3>
+        </ion-item>
+
+        
+        <ion-item>
+          <ion-icon small name="code-working" item-start></ion-icon>
+            <h3>{{ funcionario.funcao }}</h3>
+        </ion-item>
+
+      </ion-list>
+    
+  </ion-card>
+</ion-content>
+

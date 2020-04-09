@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Nova Função</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="formFuncao" (ngSubmit)="novaFuncao()">
+    <ion-item>
+      <ion-label floating>Nome da Função</ion-label>
+      <ion-input formControlName="funcao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Salario</ion-label>
+      <ion-input formControlName="salario" type="number"></ion-input>
+    </ion-item>
+    <button ion-button [disabled]="formFuncao.invalid" color="dark" round block>Cadastrar</button>
+  </form>
+
+
+</ion-content>

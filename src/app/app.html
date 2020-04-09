@@ -1,0 +1,18 @@
+<ion-menu [content]="conteudo">
+    <ion-content>
+        <ion-item>
+            <div class="center">
+                <img src="../assets/imgs/totvs.png" width="100">
+            </div>
+        </ion-item>
+
+        <ion-list *ngFor="let page of paginas" (click)="irParaPagina(page.component)">
+            <button  menuClose ion-item>
+                <ion-icon [name]="page.icon"></ion-icon>
+                {{ page.titulo }}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" main #conteudo></ion-nav>
